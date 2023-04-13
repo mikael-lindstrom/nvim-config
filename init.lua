@@ -1,0 +1,5 @@
+require('bootstrap')
+require('options')
+require('lazy').setup('plugins')
+require('commands')
+require('keymap')

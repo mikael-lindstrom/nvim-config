@@ -4,6 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.errorbells = false
 vim.opt.mouse = ''
+vim.opt.showmode = false
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

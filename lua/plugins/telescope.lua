@@ -6,7 +6,7 @@ return {
     keys = {
         { '<leader>?', '<cmd>Telescope oldfiles<cr>', desc = 'Find recently opened files' },
         { '<leader><space>', '<cmd>Telescope buffers<cr>', desc = 'Find existing buffers' },
-        { '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'Find files' },
+        { '<leader>ff', '<cmd>Telescope find_files hidden=true<cr>', desc = 'Find files' },
         { '<leader>fh', '<cmd>Telescope help_tags<cr>', desc = 'Find help' },
         { '<leader>fw', '<cmd>Telescope grep_string<cr>', desc = 'Find current word' },
         { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Find by grep' },

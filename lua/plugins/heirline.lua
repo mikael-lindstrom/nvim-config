@@ -6,8 +6,7 @@ return {
         local conditions = require('heirline.conditions')
 
         -- Setup colors
-        local config = require('gruvbox').config
-        local colors = require('gruvbox.palette').get_base_colors(vim.o.background, config.contrast)
+        local colors = require('gruvbox').palette
         require('heirline').load_colors(colors)
 
         local Space = { provider = ' ' }
@@ -21,12 +20,12 @@ return {
             local ReadOnly = {
                 condition = function() return not vim.bo.modifiable or vim.bo.readonly end,
                 provider = '',
-                hl = { fg = 'red' },
+                hl = { fg = 'bright_red' },
             }
 
             local Circle = {
                 provider = '',
-                hl = { fg = 'bg1' },
+                hl = { fg = 'dark1' },
             }
 
             Mode = {
@@ -71,23 +70,23 @@ return {
                         ['null'] = 'none',
                     },
                     mode_colors = {
-                        normal = 'fg1',
-                        op = 'blue',
-                        insert = 'blue',
-                        visual = 'yellow',
-                        visual_lines = 'yellow',
-                        visual_block = 'yellow',
-                        block = 'yellow',
-                        replace = 'red',
-                        v_replace = 'red',
-                        select = 'purple',
-                        command = 'aqua',
-                        enter = 'aqua',
-                        more = 'aqua',
-                        confirm = 'red',
-                        shell = 'orange',
-                        terminal = 'orange',
-                        none = 'red',
+                        normal = 'light1',
+                        op = 'bright_blue',
+                        insert = 'bright_blue',
+                        visual = 'brigth_yellow',
+                        visual_lines = 'bright_yellow',
+                        visual_block = 'bright_yellow',
+                        block = 'bright_yellow',
+                        replace = 'bright_red',
+                        v_replace = 'bright_red',
+                        select = 'bright_purple',
+                        command = 'bright_aqua',
+                        enter = 'bright_aqua',
+                        more = 'bright_aqua',
+                        confirm = 'bright_red',
+                        shell = 'bright_orange',
+                        terminal = 'bright_orange',
+                        none = 'bright_red',
                     },
                     mode_labels = {
                         normal = 'NORMAL',
@@ -109,7 +108,7 @@ return {
                         none = 'NONE',
                     },
                 },
-                hl = { bg = 'bg2' },
+                hl = { bg = 'dark2' },
                 update = {
                     'ModeChanged',
                     pattern = '*:*',
@@ -125,7 +124,7 @@ return {
                         Space,
                         {
                             provider = function(self) return self.mode_label end,
-                            hl = { fg = 'bg1', bold = true },
+                            hl = { fg = 'dark1', bold = true },
                         },
                     }),
                 },
@@ -141,7 +140,7 @@ return {
                         require('nvim-web-devicons').get_icon_color(self.buf_name, extension, { default = true })
                 end,
                 provider = function(self) return self.icon and (self.icon .. ' ') end,
-                hl = function(self) return { fg = self.icon_color, bg = 'bg2' } end,
+                hl = function(self) return { fg = self.icon_color, bg = 'dark2' } end,
             }
 
             local Path = {
@@ -153,7 +152,7 @@ return {
                         self.path = self.path .. '/'
                     end
                 end,
-                hl = { fg = 'grey', bg = 'bg2' },
+                hl = { fg = 'grey', bg = 'dark2' },
                 flexible = 10,
                 { provider = function(self) return self.path end },
                 { provider = function(self) return vim.fn.pathshorten(self.path) end },
@@ -172,7 +171,7 @@ return {
                 {
                     condition = function() return vim.bo.modified end,
                     provider = '[+]',
-                    hl = { fg = 'green' },
+                    hl = { fg = 'bright_green' },
                 },
             }
 

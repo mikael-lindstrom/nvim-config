@@ -73,7 +73,7 @@ return {
                         normal = 'light1',
                         op = 'bright_blue',
                         insert = 'bright_blue',
-                        visual = 'brigth_yellow',
+                        visual = 'bright_yellow',
                         visual_lines = 'bright_yellow',
                         visual_block = 'bright_yellow',
                         block = 'bright_yellow',

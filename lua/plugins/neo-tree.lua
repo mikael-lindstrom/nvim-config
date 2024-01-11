@@ -7,7 +7,16 @@ return {
     },
     keys = {
         { '<leader>e', '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
-        { '<leader>o', '<cmd>Neotree focus<cr>', desc = 'NeoTree' },
     },
-    config = function() require('neo-tree').setup() end,
+    config = function()
+        require('neo-tree').setup({
+            enable_normal_mode_for_inputs = true,
+            event_handlers = {
+                {
+                    event = 'file_opened',
+                    handler = function() require('neo-tree.command').execute({ action = 'close' }) end,
+                },
+            },
+        })
+    end,
 }

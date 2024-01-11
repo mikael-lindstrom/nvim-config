@@ -6,6 +6,7 @@ return {
         'hrsh7th/cmp-buffer',
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
+        'zbirenbaum/copilot-cmp',
     },
     config = function()
         local cmp = require('cmp')
@@ -23,8 +24,9 @@ return {
             }),
             -- Installed sources
             sources = {
-                { name = 'nvim_lsp' },
-                { name = 'buffer' },
+                { name = 'copilot', group_index = 2 },
+                { name = 'nvim_lsp', group_index = 2 },
+                { name = 'buffer', group_index = 2 },
             },
         })
     end,

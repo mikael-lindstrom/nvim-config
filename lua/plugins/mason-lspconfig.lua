@@ -12,6 +12,10 @@ return {
             'terraformls',
             'rust_analyzer',
             'gopls',
+            'templ',
+            'html',
+            'htmx',
+            'tailwindcss',
         },
     },
 }

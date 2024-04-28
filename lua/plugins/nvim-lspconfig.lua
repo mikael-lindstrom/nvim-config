@@ -66,6 +66,30 @@ return {
             on_attach = on_attach,
         })
 
+        lsp_config.templ.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lsp_config.html.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { 'html', 'templ' },
+        })
+
+        lsp_config.htmx.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { 'html', 'templ' },
+        })
+
+        lsp_config.tailwindcss.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { 'templ', 'astro', 'javascript', 'typescript', 'react' },
+            init_options = { userLanguages = { templ = 'html' } },
+        })
+
         lsp_config.lua_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
